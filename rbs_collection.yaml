@@ -15,5 +15,3 @@ path: .gem_rbs_collection
 
 gems:
   - name: pathname
-  - name: rbs_rails
-    ignore: true
