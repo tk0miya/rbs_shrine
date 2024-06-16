@@ -26,6 +26,7 @@ GEM
     connection_pool (2.4.1)
     content_disposition (1.0.0)
     csv (3.3.0)
+    diff-lcs (1.5.1)
     down (5.4.2)
       addressable (~> 2.8)
     drb (2.2.1)
@@ -59,6 +60,21 @@ GEM
     regexp_parser (2.9.2)
     rexml (3.3.0)
       strscan
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-daemon (1.1.1)
+      rspec
+    rspec-expectations (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
     rubocop (1.64.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -107,6 +123,8 @@ PLATFORMS
 DEPENDENCIES
   rake (~> 13.0)
   rbs_shrine!
+  rspec
+  rspec-daemon
   rubocop (~> 1.21)
   steep
 
