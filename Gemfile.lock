@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rbs_shrine (0.1.0)
+    rbs_shrine (1.0.0)
       activerecord
       railties
       rbs
