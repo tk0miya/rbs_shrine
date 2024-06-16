@@ -4,7 +4,7 @@ PATH
     rbs_shrine (0.1.0)
       activerecord
       railties
-      rbs_rails
+      rbs
       shrine
 
 GEM
@@ -125,9 +125,6 @@ GEM
       ffi (~> 1.0)
     rbs (3.5.1)
       logger
-    rbs_rails (0.12.0)
-      parser
-      rbs (>= 1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)

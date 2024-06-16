@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activerecord"
   spec.add_dependency "railties"
-  spec.add_dependency "rbs_rails"
+  spec.add_dependency "rbs"
   spec.add_dependency "shrine"
 end
