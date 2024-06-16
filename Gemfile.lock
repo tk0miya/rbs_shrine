@@ -2,11 +2,19 @@ PATH
   remote: .
   specs:
     rbs_shrine (0.1.0)
+      activerecord
+      rbs_rails
       shrine
 
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (7.1.3.4)
+      activesupport (= 7.1.3.4)
+    activerecord (7.1.3.4)
+      activemodel (= 7.1.3.4)
+      activesupport (= 7.1.3.4)
+      timeout (>= 0.4.0)
     activesupport (7.1.3.4)
       base64
       bigdecimal
@@ -57,6 +65,9 @@ GEM
       ffi (~> 1.0)
     rbs (3.5.1)
       logger
+    rbs_rails (0.12.0)
+      parser
+      rbs (>= 1)
     regexp_parser (2.9.2)
     rexml (3.3.0)
       strscan
@@ -111,6 +122,7 @@ GEM
     strscan (3.1.0)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
+    timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)

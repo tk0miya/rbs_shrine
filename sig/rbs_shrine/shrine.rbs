@@ -1,0 +1,22 @@
+module RbsShrine
+  module Shrine
+    def self.all: () -> Array[singleton(ActiveRecord::Base)]
+    def self.class_to_rbs: (singleton(ActiveRecord::Base) klass) -> String
+
+    class Generator
+      attr_reader klass: singleton(ActiveRecord::Base)
+      attr_reader klass_name: String
+
+      def initialize: (singleton(ActiveRecord::Base) klass) -> void
+      def generate: () -> String
+
+      private
+
+      def klass_decl: () -> String
+      def header: () -> String
+      def footer: () -> String
+      def methods: () -> String
+      def attachments: () -> Array[::Shrine::Attachment]
+    end
+  end
+end

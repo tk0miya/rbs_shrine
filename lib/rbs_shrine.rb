@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "rbs_shrine/shrine"
 require_relative "rbs_shrine/version"
 
 module RbsShrine
