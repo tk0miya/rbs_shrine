@@ -42,7 +42,7 @@ module RbsShrine
 
         RbsShrine::Shrine.all.each do |klass|
           rbs = RbsShrine::Shrine.class_to_rbs(klass)
-          path = signature_root_dir / "#{klass.name.underscore}.rbs"
+          path = signature_root_dir / "#{klass.name.to_s.underscore}.rbs"
           path.dirname.mkpath
           path.write(rbs)
         end
