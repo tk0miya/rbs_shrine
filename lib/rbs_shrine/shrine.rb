@@ -69,11 +69,11 @@ module RbsShrine
         attachments.reverse.map do |attachment|
           name = attachment.attachment_name
           <<~RBS
-            def #{name}: () -> Shrine::UploadedFile
-            def #{name}=: (IO | String | Hash[untyped, untyped]) -> Shrine::UploadedFile
-            def #{name}_attacher: () -> Shrine::Attacher
+            def #{name}: () -> ::Shrine::UploadedFile
+            def #{name}=: (::IO | ::String | ::Hash[untyped, untyped]) -> ::Shrine::UploadedFile
+            def #{name}_attacher: () -> ::Shrine::Attacher
             def #{name}_changed: () -> bool
-            def #{name}_url: () -> String
+            def #{name}_url: () -> ::String
           RBS
         end.join("\n")
       end
