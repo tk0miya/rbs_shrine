@@ -4,23 +4,26 @@ require "rbs"
 
 module RbsShrine
   module Shrine
-    def self.all
+    def self.all #: Array[singleton(ActiveRecord::Base)]
       ActiveRecord::Base.descendants.select { |model| model.ancestors.any?(::Shrine::Attachment) }
     end
 
-    def self.class_to_rbs(klass)
+    # @rbs klass: singleton(ActiveRecord::Base)
+    def self.class_to_rbs(klass) #: String
       Generator.new(klass).generate
     end
 
     class Generator
-      attr_reader :klass, :klass_name
+      attr_reader :klass #: singleton(ActiveRecord::Base)
+      attr_reader :klass_name #: String
 
-      def initialize(klass)
+      # @rbs klass: singleton(ActiveRecord::Base)
+      def initialize(klass) #: void
         @klass = klass
         @klass_name = klass.name || ""
       end
 
-      def generate
+      def generate #: String
         format <<~RBS
           #{header}
             #{methods}
@@ -30,14 +33,15 @@ module RbsShrine
 
       private
 
-      def format(rbs)
+      # @rbs rbs: String
+      def format(rbs) #: String
         parsed = RBS::Parser.parse_signature(rbs)
         StringIO.new.tap do |out|
           RBS::Writer.new(out:).write(parsed[1] + parsed[2])
         end.string
       end
 
-      def header
+      def header #: String
         namespace = +""
         klass_name.split("::").map do |mod_name|
           namespace += "::#{mod_name}"
@@ -57,11 +61,11 @@ module RbsShrine
         end.join("\n")
       end
 
-      def footer
+      def footer #: String
         "end\n" * klass.module_parents.size
       end
 
-      def methods
+      def methods #: String
         attachments.reverse.map do |attachment|
           name = attachment.attachment_name
           <<~RBS
@@ -73,7 +77,7 @@ module RbsShrine
         end.join("\n")
       end
 
-      def attachments
+      def attachments #: Array[::Shrine::Attachment]
         @klass.ancestors.filter_map { |mod| mod if mod.is_a? ::Shrine::Attachment }
       end
     end
