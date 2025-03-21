@@ -32,11 +32,13 @@ RSpec.describe RbsShrine::Shrine do
         class Account < ::ActiveRecord::Base
           def icon: () -> Shrine::UploadedFile
           def icon=: (IO | String | Hash[untyped, untyped]) -> Shrine::UploadedFile
+          def icon_attacher: () -> Shrine::Attacher
           def icon_changed: () -> bool
           def icon_url: () -> String
 
           def small_icon: () -> Shrine::UploadedFile
           def small_icon=: (IO | String | Hash[untyped, untyped]) -> Shrine::UploadedFile
+          def small_icon_attacher: () -> Shrine::Attacher
           def small_icon_changed: () -> bool
           def small_icon_url: () -> String
         end
