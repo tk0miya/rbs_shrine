@@ -67,6 +67,7 @@ module RbsShrine
           <<~RBS
             def #{name}: () -> Shrine::UploadedFile
             def #{name}=: (IO | String | Hash[untyped, untyped]) -> Shrine::UploadedFile
+            def #{name}_attacher: () -> Shrine::Attacher
             def #{name}_changed: () -> bool
             def #{name}_url: () -> String
           RBS
