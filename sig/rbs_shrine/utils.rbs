@@ -2,6 +2,9 @@
 
 module RbsShrine
   module Utils
+    # @rbs rbs: String
+    def format: (String rbs) -> String
+
     # @rbs klass_name: singleton(Object)
     def klass_to_names: (untyped klass) -> Array[RBS::TypeName]
   end

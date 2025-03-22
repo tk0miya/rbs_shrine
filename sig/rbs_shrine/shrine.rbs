@@ -21,9 +21,6 @@ module RbsShrine
 
       private
 
-      # @rbs rbs: String
-      def format: (String rbs) -> String
-
       def header: () -> String
 
       def footer: () -> String
