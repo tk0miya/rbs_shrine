@@ -28,6 +28,8 @@ module RbsShrine
 
       def generate #: String
         format <<~RBS
+          # resolve-type-names: false
+
           #{header}
             #{methods}
           #{footer}

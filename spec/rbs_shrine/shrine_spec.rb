@@ -29,6 +29,8 @@ RSpec.describe RbsShrine::Shrine do
 
     it "generates RBS" do
       rbs = <<~RBS
+        # resolve-type-names: false
+
         class ::Account < ::ActiveRecord::Base
           def icon: () -> ::Shrine::UploadedFile
           def icon=: (::IO | ::String | ::Hash[untyped, untyped]) -> ::Shrine::UploadedFile
