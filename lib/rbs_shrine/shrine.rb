@@ -38,14 +38,6 @@ module RbsShrine
 
       private
 
-      # @rbs rbs: String
-      def format(rbs) #: String
-        parsed = RBS::Parser.parse_signature(rbs)
-        StringIO.new.tap do |out|
-          RBS::Writer.new(out:).write(parsed[1] + parsed[2])
-        end.string
-      end
-
       def header #: String
         klass_to_names(klass).map do |name|
           mod_object = Object.const_get(name.to_s)

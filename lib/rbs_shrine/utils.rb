@@ -4,6 +4,14 @@ require "rbs"
 
 module RbsShrine
   module Utils
+    # @rbs rbs: String
+    def format(rbs) #: String
+      parsed = RBS::Parser.parse_signature(rbs)
+      StringIO.new.tap do |out|
+        RBS::Writer.new(out:).write(parsed[1] + parsed[2])
+      end.string
+    end
+
     # @rbs klass_name: singleton(Object)
     def klass_to_names(klass) #: Array[RBS::TypeName]
       type_name = RBS::TypeName.parse("::#{klass.name}")
