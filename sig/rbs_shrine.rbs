@@ -1,4 +1,6 @@
+# Generated from lib/rbs_shrine.rb with RBS::Inline
+
 module RbsShrine
-  VERSION: String
-  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+  class Error < StandardError
+  end
 end

@@ -4,9 +4,12 @@ require "rake/tasklib"
 
 module RbsShrine
   class RakeTask < Rake::TaskLib
-    attr_accessor :name, :signature_root_dir
+    attr_accessor :name #: Symbol
+    attr_accessor :signature_root_dir #: Pathname
 
-    def initialize(name = :'rbs:shrine', &block)
+    # @rbs name: Symbol
+    # @rbs &block: ?(RakeTask) -> void
+    def initialize(name = :'rbs:shrine', &block) #: void
       super()
 
       @name = name
@@ -19,21 +22,21 @@ module RbsShrine
       define_setup_task
     end
 
-    def define_setup_task
+    def define_setup_task #: void
       desc "Run all tasks of rbs_shrine"
 
       deps = [:"#{name}:clean", :"#{name}:generate"]
       task("#{name}:setup" => deps)
     end
 
-    def define_clean_task
+    def define_clean_task #: void
       desc "Clean RBS files for shrine models"
       task "#{name}:clean" do
         signature_root_dir.rmtree if signature_root_dir.exist?
       end
     end
 
-    def define_generate_task
+    def define_generate_task #: void
       desc "Generate RBS files for shrine models"
       task("#{name}:generate": :environment) do
         require "rbs_shrine/shrine" # load RbsShrine lazily
