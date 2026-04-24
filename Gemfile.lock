@@ -61,7 +61,7 @@ GEM
     down (5.4.2)
       addressable (~> 2.8)
     drb (2.2.3)
-    erb (6.0.2)
+    erb (6.0.4)
     erubi (1.13.1)
     ffi (1.17.4)
     ffi (1.17.4-x86_64-darwin)
