@@ -185,7 +185,7 @@ GEM
       prism (~> 1.7)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    shrine (3.7.1)
+    shrine (3.8.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
     steep (2.0.0)
