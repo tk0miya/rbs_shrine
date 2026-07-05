@@ -18,7 +18,7 @@ RSpec.describe RbsShrine::Shrine do
     subject { described_class.all }
 
     it "returns all ActiveRecord models with Shrine::Attachment" do
-      is_expected.to contain_exactly(Account, Article)
+      expect(subject).to contain_exactly(Account, Article)
     end
   end
 
@@ -46,7 +46,7 @@ RSpec.describe RbsShrine::Shrine do
         end
       RBS
 
-      is_expected.to eq(rbs)
+      expect(subject).to eq(rbs)
     end
   end
 end

@@ -5,6 +5,7 @@ plugins:
   - rubocop-numbered-params
   - rubocop-rake
   - rubocop-rbs_inline
+  - rubocop-rspec
 
 Style/Documentation:
   Enabled: false
@@ -42,3 +43,9 @@ Layout/MethodLength:
 
 Metrics/AbcSize:
   Max: 20
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
