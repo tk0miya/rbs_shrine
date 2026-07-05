@@ -6,7 +6,7 @@ require_relative "utils"
 module RbsShrine
   module Shrine
     def self.all #: Array[singleton(ActiveRecord::Base)]
-      ActiveRecord::Base.descendants.select { |model| model.ancestors.any?(::Shrine::Attachment) }
+      ActiveRecord::Base.descendants.select { _1.ancestors.any?(::Shrine::Attachment) }
     end
 
     # @rbs klass: singleton(ActiveRecord::Base)
@@ -74,7 +74,7 @@ module RbsShrine
       end
 
       def attachments #: Array[::Shrine::Attachment]
-        @klass.ancestors.filter_map { |mod| mod if mod.is_a? ::Shrine::Attachment }
+        @klass.ancestors.filter_map { _1 if _1.is_a? ::Shrine::Attachment }
       end
     end
   end
