@@ -9,7 +9,7 @@ module RbsShrine
 
     # @rbs name: Symbol
     # @rbs &block: ?(RakeTask) -> void
-    def initialize(name = :'rbs:shrine', &block) #: void
+    def initialize(name = :"rbs:shrine", &block) #: void
       super()
 
       @name = name
