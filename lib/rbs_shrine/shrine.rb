@@ -74,7 +74,7 @@ module RbsShrine
       end
 
       def attachments #: Array[::Shrine::Attachment]
-        @klass.ancestors.filter_map { _1 if _1.is_a? ::Shrine::Attachment }
+        klass.ancestors.filter_map { _1 if _1.is_a? ::Shrine::Attachment }
       end
     end
   end
